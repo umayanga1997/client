@@ -2,7 +2,7 @@ import { NextPage, NextPageContext } from "next";
 import { getSession, useSession } from "next-auth/react";
 import Auth from "@/components/Auth/Auth";
 import Chat from "@/components/Chat/Chat";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 const Home: NextPage = () => {
   const { data: session } = useSession();
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const reloadSession = async () => {};
 
   return (
-    <>
+    <Box>
       <Grid
         container
         alignContent={"center"}
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <Auth session={session} reloadSession={reloadSession} />
         )}
       </Grid>
-    </>
+    </Box>
   );
 };
 
